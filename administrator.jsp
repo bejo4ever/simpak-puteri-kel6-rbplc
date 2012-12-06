@@ -1,9 +1,3 @@
-<%-- 
-    Document   : administrator
-    Created on : Dec 6, 2012, 1:58:26 PM
-    Author     : holyknight
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +6,16 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>ADMINISTRASI</h1>
+    
+    <TABLE>
+    <tr><td>Nama </td><td>Alamat </td><td>Telepon </td><td>User Name</td><td>Admin ?</tr>
+    //nanti diiterasi, nunggu database
+    
+   </TABLE> 
+    
     </body>
+    
+   
+    
 </html>
