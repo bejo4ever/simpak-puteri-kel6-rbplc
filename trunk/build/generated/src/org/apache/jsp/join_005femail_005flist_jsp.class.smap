@@ -1,0 +1,37 @@
+SMAP
+join_005femail_005flist_jsp.java
+JSP
+*S JSP
+*F
++ 0 join_email_list.jsp
+join_email_list.jsp
++ 1 header.html
+includes/header.html
++ 2 footer.jsp
+includes/footer.jsp
+*L
+5,2:52
+1#1,9:54
+7#0,2:62
+11,11:66
+21,4:77
+25:81,3
+26,5:84
+31:89,3
+32,4:92
+36:96,3
+37,4:99
+41:103,3
+42,7:106
+49:113,3
+50,4:116
+54:120,3
+55,4:123
+59:127,3
+60,8:130
+1#2:137
+4,3:140
+6,3:143
+9:146,3
+10,4:149
+*E
