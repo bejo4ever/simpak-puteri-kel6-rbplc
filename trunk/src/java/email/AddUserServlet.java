@@ -10,15 +10,15 @@ import business.ModifyDB;
 
 public class AddUserServlet extends HttpServlet {
 
-    public static boolean isNumeric(String str) {
-        try {
-            int d = Integer.parseInt(str);
-        } catch (NumberFormatException nfe) {
-            return false;
-        }
-        return true;
-    }
-
+    /*public static boolean isNumeric(String str) {
+     try {
+     int d = Integer.parseInt(str);
+     } catch (NumberFormatException nfe) {
+     return false;
+     }
+     return true;
+     }
+     }*/
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
@@ -42,7 +42,6 @@ public class AddUserServlet extends HttpServlet {
         //validate the parameters
         String message = "";
         String url = "";
-
         if (firstName.length() == 0
                 || alamat.length() == 0
                 || telepon.length() == 0
@@ -53,22 +52,13 @@ public class AddUserServlet extends HttpServlet {
             url = "/tambah_user.jsp";
         } else {
             message = "";
-
-            context = getServletContext();
-            path = context.getRealPath("/WEB-INF/EmailList.txt");
-            //UserIO.addRecord(user, path);
             ModifyDB.addUser(user);
             url = "/display_email_entry.jsp";
-            //url = "/tambah_user.jsp";
-        }
-        if (isNumeric(telepon)) {
-            message = "Mohon gunakan angka untuk nomor telepon";
-            url = "/tambah_user.jsp";
         }
         //UserIO.addRecord(user, path);
 
         // store the User object in the request object
-        //request.setAttribute("user", user);
+        request.setAttribute("user", user);
         request.setAttribute("message", message);
 
         // forward request and response objects to JSP page
@@ -77,6 +67,5 @@ public class AddUserServlet extends HttpServlet {
         RequestDispatcher dispatcher =
                 getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
-        
     }
 }

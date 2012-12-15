@@ -19,9 +19,9 @@ public class ModifyDB extends data.dbConnection {
             st = con.createStatement();
             st.executeUpdate("INSERT INTO user VALUES ('" + x.getFirstName()
                     + "','" + x.getAlamat() + "','" + x.getTelepon() + "','" + x.getUsername() + "',md5('" + x.getPass() + "'))");
-            st.executeUpdate("INSERT INTO admin VALUES ('" + x.getUsername() + "','" + x.getAdmin() + "'))");
+            //st.executeUpdate("INSERT INTO admin VALUES ('" + x.getUsername() + "','" + x.getAdmin() + "'))");
             if (x.getAdmin().equals("1")) {
-                st.executeUpdate("INSERT INTO admin VALUES ('" + x.getUsername() + "','" + x.getAdmin() + "'))");
+                st.executeUpdate("INSERT INTO admin VALUES ('" + x.getUsername() + "','" + x.getAdmin() + "')");
             }
         } catch (Exception e) {
         }

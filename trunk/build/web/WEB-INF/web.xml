@@ -15,10 +15,6 @@
     <servlet>
         <servlet-name>loginServlet</servlet-name>
         <servlet-class>email.loginServlet</servlet-class>
-        <init-param>
-            <param-name>relativePathToFile</param-name>
-            <param-value>/WEB-INF/EmailList.txt</param-value>
-        </init-param>
     </servlet>
     <!-- mapping -->
     <servlet-mapping>
@@ -33,7 +29,7 @@
         <session-timeout>30</session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>tambah_user.jsp</welcome-file>
+        <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
     <error-page>
         <error-code>404</error-code>

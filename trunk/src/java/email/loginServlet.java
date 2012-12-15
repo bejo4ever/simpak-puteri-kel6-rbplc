@@ -18,8 +18,8 @@ public class loginServlet extends HttpServlet {
         String mode = request.getParameter("mode");
 
         // get a relative file name
-        ServletContext context;
-        String path;
+        //ServletContext context;
+        //String path;
 
         // use regular Java classes
         User user = new User(username, pass, mode);
@@ -48,18 +48,19 @@ public class loginServlet extends HttpServlet {
                     url = "/administrator.jsp";
                 }
             } else {
-                message = "password salah";
+                message = "username / password salah";
                 url = "/login.jsp";
             }
 
-            context = getServletContext();
-            path = context.getRealPath("/WEB-INF/EmailList.txt");
+            //context = getServletContext();
+            //path = context.getRealPath("/WEB-INF/EmailList.txt");
         }
 
         // store the User object in the request object
         request.setAttribute("user", user);
+        request.setAttribute("ses", username);
         request.setAttribute("message", message);
-
+        
         // forward request and response objects to JSP page
         RequestDispatcher dispatcher =
                 getServletContext().getRequestDispatcher(url);
