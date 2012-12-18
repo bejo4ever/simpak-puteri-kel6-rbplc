@@ -4,28 +4,41 @@
     Author     : holyknight
 --%>
 
+<%@page import="business.Lokasi"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <html>
         <%
-            String ses = (String) request.getAttribute("ses");
-            //String ses = request.getParameter("ses");
-            if (ses == null) {
+            //String ses = (String) request.getAttribute("ses");
+            HttpSession ses = request.getSession(true);
+            String username = "";
+            try {
+                username = ses.getValue("username").toString();
+            } catch (Exception e) {
                 RequestDispatcher dispatcher =
                         getServletContext().getRequestDispatcher("/login.jsp");
                 request.setAttribute("message", "anda belum login");
                 dispatcher.forward(request, response);
-
             }
+            Lokasi lokasi = (Lokasi) request.getAttribute("lokasi");
+            String message = (String) request.getAttribute("message");
+            //request.setAttribute("action", "masuk");
 
+            //null values
+            if (lokasi == null) {
+                lokasi = new Lokasi();
+            }
+            if (message == null) {
+                message = "";
+            }
         %>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <title>JSP Page</title>
         </head>
         <body>
-            <sub><p align="right">welcome <%= ses%>!</p></sub>
+            <sub><p align="right">welcome <%= username%>!</p></sub>
 
             <div id ="header">
                 <h1>Hello World! Kontrol</h1>
@@ -57,7 +70,7 @@
                                     %>
                                 </select></td>
                         </tr>
-                        
+
                         <tr>
                             <td align="right">Realisasi lokasi</td>
                             <td><select name="realisasilantai">

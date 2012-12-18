@@ -58,7 +58,9 @@ public class loginServlet extends HttpServlet {
 
         // store the User object in the request object
         request.setAttribute("user", user);
-        request.setAttribute("ses", username);
+        //request.setAttribute("ses", username);
+        HttpSession ses = request.getSession(true);
+                    ses.putValue("username", username);
         request.setAttribute("message", message);
         
         // forward request and response objects to JSP page
