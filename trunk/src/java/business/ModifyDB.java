@@ -50,7 +50,7 @@ public class ModifyDB extends data.dbConnection {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(url, user, password);
             st = con.createStatement();
-            rs = st.executeQuery("SELECT * FROM user WHERE username = '" + x.getUsername() 
+            rs = st.executeQuery("SELECT * FROM user WHERE username = '" + x.getUsername()
                     + "' AND password = md5('" + x.getPass() + "')");
             if (rs.next()) {
                 y = true;
@@ -60,5 +60,35 @@ public class ModifyDB extends data.dbConnection {
         } catch (Exception e) {
         }
         return y;
+    }
+
+    //============================================LOKASI========================
+    public static boolean checkAvailable(Lokasi x) {
+        boolean y = false;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(url, user, password);
+            st = con.createStatement();
+            rs = st.executeQuery("SELECT * FROM lokasi WHERE lantai = '" + x.getLantai()
+                    + "' AND posisi = '" + x.getPosisi() + "'");
+            if (rs.next()) {
+                y = false;
+            } else {
+                y = true;
+            }
+        } catch (Exception e) {
+        }
+        return y;
+    }
+
+    public static void addLokasi(Lokasi x) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(url, user, password);
+            st = con.createStatement();
+            st.executeUpdate("INSERT INTO lokasi VALUES ('" + x.getLantai()
+                    + "','" + x.getPosisi() + "','" + x.getNmr_kendaraan() + "','1')");
+        } catch (Exception e) {
+        }
     }
 }
