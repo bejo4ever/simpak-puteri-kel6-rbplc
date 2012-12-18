@@ -45,57 +45,18 @@
             </div>
 
             <div id ="formstyle">
-                <form action="login" method="post">
-                    <table cellspacing="5" border="0">
-                        <tr>
-                            <td align="right">Nomor Kendaraan</td>
-                            <td><input type="text" name="nomor"></td>
-                        </tr>
-                        <tr>
-                            <td align="right">Rencana lokasi</td>
-                            <td><select name="rencanalantai">
-                                    <%
-                                        for (int i = 1; i <= 6; i++) {
-                                    %>
-                                    <option  value = "" > <% out.print(i);%> </option>
-                                    <%                                }
-                                    %>
-                                </select>
-                                <select name="rencanaposisi">
-                                    <%
-                                        for (int i = 1; i <= 20; i++) {
-                                    %>
-                                    <option  value = "" > <% out.print(i);%> </option>
-                                    <%                                }
-                                    %>
-                                </select></td>
-                        </tr>
-
-                        <tr>
-                            <td align="right">Realisasi lokasi</td>
-                            <td><select name="realisasilantai">
-                                    <%
-                                        for (int i = 1; i <= 6; i++) {
-                                    %>
-                                    <option  value = "" > <% out.print(i);%> </option>
-                                    <%                                }
-                                    %>
-                                </select>
-                                <select name="realisasiposisi">
-                                    <%
-                                        for (int i = 1; i <= 20; i++) {
-                                    %>
-                                    <option  value = "" > <% out.print(i);%> </option>
-                                    <%                                }
-                                    %>
-                                </select></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><br><input type="submit" value="Submit"></td>
-                        </tr>
-                    </table>
-                </form>
+                <table>
+                    <%
+                    for(int i=0;i<20;i++){
+                        out.println("<tr><form>");
+                        out.print("<td>nmr_kendaraan</td> ");                        
+                        out.print("<td>posisiRencana</td> ");                        
+                        out.print("<td>posisiRealisasi</td> ");                        
+                        out.print("<td><input type=submit></td> ");                        
+                        out.println("</form></tr>");
+                    }
+                    %>
+                </table>
             </div>
         </body>
     </html>
