@@ -31,7 +31,7 @@ public class loginServlet extends HttpServlet {
         String url = "";
         if (username.length() == 0
                 || pass.length() == 0) {
-            message = "Peliiis fill out all text boxes.";
+            message = "Mohon isi semua field.";
             url = "/login.jsp";
         } else {
             message = "";

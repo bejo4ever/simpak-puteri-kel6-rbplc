@@ -85,6 +85,22 @@ left: 42%;
 top: 65%;
 }
 
+#box_masuk
+{
+position: absolute;
+top: 35%;
+margin-left: 25%;
+margin-right: 25%;
+}
+
+#box_displaytable
+{
+position: absolute;
+top: 35%;
+margin-left: 25%;
+margin-right: 25%;
+}
+
 #box_error
 {
 position: absolute;
