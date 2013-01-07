@@ -33,6 +33,12 @@
         }
     %>
     <head>
+        <script>
+            function posisi(i){
+                document.masuk.posisi.value=i;
+            }
+        </script>
+        <link rel="stylesheet" type="text/css" href="includes/style.css" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
@@ -40,7 +46,7 @@
         <sub><p align="right">welcome <%= username%>!</p></sub>
 
         <div id ="header">
-            <h1>Hello World! Masuk</h1>
+
             <p><i>
                     <%
                         out.print(message);
@@ -48,8 +54,9 @@
                 </i></p>
         </div>
 
-        <div id ="formstyle">
-            <form action="location" method="post">
+        <div id="box">
+            <h1>Mode: Masuk</h1>
+            <form action="location" method="post" name="masuk">
                 <table cellspacing="5" border="0">
                     <tr>
                         <td align="right">Nomor Kendaraan</td>
@@ -69,15 +76,27 @@
                     </tr>
                     <tr>
                         <td align="right">Posisi</td>
-                        <td><select name="posisi">
-                                <option  value = "pilih" >pilih</option>
-                                <%
-                                    for (int i = 1; i <= 20; i++) {
-                                %>
-                                <option  value = "<% out.print(i);%>" > <% out.print(i);%> </option>
-                                <%                                }
-                                %>
-                            </select></td>
+                        <%-- <td><select name="posisi">
+                                 <option  value = "pilih" >pilih</option>
+                                 <%
+                                     for (int i = 1; i <= 20; i++) {
+                                 %>
+                                 <option  value = "<% out.print(i);%>" > <% out.print(i);%> </option>
+                                 <%                                }
+                                 %>
+                             </select> --%>
+                        <td><input type="text" name="posisi" border="1">
+                            <table>
+                                <tr>
+                                    <td><a href="javascript:posisi(1)">1</a></td>
+                                    <td><a href="javascript:posisi(2)">2</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="javascript:posisi(3)">3</a></td>
+                                    <td><a href="javascript:posisi(4)">4</a></td>
+                                </tr>
+                            </table>                        
+                        </td>
                     </tr>
                     <tr>
                         <td><input name ="action" type="hidden" value="masuk"></td>

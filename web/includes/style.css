@@ -8,11 +8,14 @@
 
 body
 {
-background-image:url('../images/Sim Parking.jpg');
+background-image:url('../includes/Sim Parking.jpg');
 background-repeat:no-repeat;
 background-position: center;
 background-attachment: fixed;
 background-color: #413264;
+font-family:arial;
+color:white;
+font-size:14px;
 }
 
 input[type="text"] {

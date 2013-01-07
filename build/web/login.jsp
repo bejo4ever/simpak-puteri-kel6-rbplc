@@ -15,32 +15,35 @@
 
 %>
 
-<h1>Login</h1>
+<link rel="stylesheet" type="text/css" href="includes/style.css" />
+<%--<h1>Login</h1>--%>
 <p><i><%= message%></i></p>
-<form action="login" method="post">
-    <table cellspacing="5" border="0">
-        <tr>
-            <td align="right">Username:</td>
-            <td><input type="text" name="username"
-                       value="<%= user.getUsername()%>"></td>
-        </tr>
-        <tr>
-            <td align="right">Password:</td>
-            <td><input type="password" name="pass"
-                       value="<%= user.getPass()%>"></td>
-        </tr>
-        <tr>
-            <td align="right">Mode:</td>
-            <td><select name="mode">
-                    <option value="masuk">Masuk</option>
-                    <option value="keluar">Keluar</option>
-                    <option value="kontrol">Kontrol</option>
-                </select></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><br><input type="submit" value="Submit"></td>
-        </tr>
-    </table>
-</form>
+<div id="box">
+    <form action="login" method="post">
+        <table cellspacing="5" border="0">
+            <tr>
+                <td align="right">Username:</td>
+                <td><input type="text" name="username"
+                           value="<%= user.getUsername()%>"></td>
+            </tr>
+            <tr>
+                <td align="right">Password:</td>
+                <td><input type="password" name="pass"
+                           value=""></td>
+            </tr>
+            <tr>
+                <td align="right">Mode:</td>
+                <td><select name="mode">
+                        <option value="masuk">Masuk</option>
+                        <option value="keluar">Keluar</option>
+                        <option value="kontrol">Kontrol</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><br><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</div> 
 <%@include file="/includes/footer.jsp" %>

@@ -15,7 +15,7 @@
     }
 
 %>
-
+<link rel="stylesheet" type="text/css" href="includes/style.css" />
 <h1>Daftar karyawan</h1>
 <h2>Biodata</h2>
 <p><i><%= message%></i></p>

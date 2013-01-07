@@ -8,14 +8,15 @@
 <!DOCTYPE html>
 <html>
     <%
-        String ses = (String) request.getAttribute("ses");
-        //String ses = request.getParameter("ses");
-        if (ses == null) {
+        HttpSession ses = request.getSession(true);
+        String username = "";
+        try {
+            username = ses.getValue("username").toString();
+        } catch (Exception e) {
             RequestDispatcher dispatcher =
                     getServletContext().getRequestDispatcher("/login.jsp");
             request.setAttribute("message", "anda belum login");
             dispatcher.forward(request, response);
-
         }
 
     %>
@@ -24,7 +25,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        welcome <%= ses%>!
+        welcome <%= username%>!
         <h1>Hello World! Administrator</h1>
     </body>
 </html>
