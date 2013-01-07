@@ -96,9 +96,13 @@ margin-right: 25%;
 #box_displaytable
 {
 position: absolute;
-top: 35%;
-margin-left: 25%;
-margin-right: 25%;
+}
+
+#box_displayplace
+{
+position: absolute;
+top: 24%;
+left: 75%
 }
 
 #box_error

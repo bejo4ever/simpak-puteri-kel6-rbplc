@@ -43,7 +43,8 @@
         <title>::MASUK::</title>
     </head>
     <body>
-        <sub><p align="right">welcome <%= username%>!</p></sub>
+        <button onclick="location.href='logout.jsp'">Logout</button>
+        <sub><p align="right">welcome <%= username%>!  </p></sub>
 
         <div id ="header">
 
@@ -76,7 +77,7 @@
                     </tr>
                     <tr>
                         <td align="right">Posisi</td>
-                        <td><input type="text" readonly="readonly" name="posisi">
+                        <td>
                             <table border="1" bgcolor="#ffffff" cellpadding="10px">
                                 <tr>
                                     <td><a href="javascript:posisi(1)">1</a></td>
@@ -102,7 +103,7 @@
                                     <td><a href="javascript:posisi(19)">19</a></td>
                                     <td><a href="javascript:posisi(20)">20</a></td>
                                 </tr>
-                                
+                                <input type="text" readonly="readonly" name="posisi">
                             </table>                        
                         </td>
                     </tr>
