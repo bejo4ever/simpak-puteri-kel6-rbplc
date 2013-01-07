@@ -26,10 +26,11 @@
         <body onload="JavaScript:timedRefresh(15000);">
 
             <div id ="header">
-                <h1>Kondisi Area Parkir</h1>
+                <h1>Kondisi Area Parkir</h1> 
+                <font color="black"><table cellpadding="4px"><td bgcolor=#00ff00>Tersedia</td><td bgcolor=#aaaa00>Akan dipakai</td><td bgcolor=#aa0000>Terpakai</td></table></font>
             </div>
 
-            <div id ="box_display">
+            <div id ="box_displaytable">
                 <h1><table border="0" bgcolor="#ffffff" cellpadding="10px">
                         <tr>
                             <%
@@ -80,6 +81,15 @@
                                 }
                             %>
                     </table></h1>  
+            </div>
+            <div id="box_displayplace">
+                <img src="includes/gramedia.jpg" height=50px>
+                <br><br><br>
+                <img src=includes/matahari.jpg height=50px>
+                <br><br><br>
+                <img src=includes/matahari.jpg height=50px>
+                <br><br><br>
+                <img src=includes/mcd.jpg height=50px>            <img src=includes/kfc.jpg height=50px>
             </div>
         </body>
     </html>

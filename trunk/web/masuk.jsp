@@ -43,7 +43,8 @@
         <title>::MASUK::</title>
     </head>
     <body>
-        <sub><p align="right">welcome <%= username%>!</p></sub>
+        <button onclick="location.href='logout.jsp'">Logout</button>
+        <sub><p align="right">welcome <%= username%>!  </p></sub>
 
         <div id ="header">
 
