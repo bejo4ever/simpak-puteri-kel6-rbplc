@@ -91,4 +91,21 @@ public class ModifyDB extends data.dbConnection {
         } catch (Exception e) {
         }
     }
+
+    public static String[] checkStatus(String x) {
+        String[] scan = new String[20];
+        try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(url, user, password);
+            st = con.createStatement();
+            rs = st.executeQuery("SELECT posisi FROM lokasi WHERE lantai = '" + x + "'");
+            int i = 0;
+            while (rs.next()) {
+                scan[i] = rs.getString(url);
+            }
+        } catch (Exception e) {
+        }
+        return scan;
+    }
 }

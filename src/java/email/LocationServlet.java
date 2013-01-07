@@ -30,6 +30,7 @@ public class LocationServlet extends HttpServlet {
         //validate the parameters
         String message = "";
         String url = "";
+        String[] scan = new String[20];
 
         //actions
         if (action.equals("masuk")) {
@@ -48,6 +49,8 @@ public class LocationServlet extends HttpServlet {
                 }
             }
             url = "/masuk.jsp";
+        } else if (action.equals("kontrol")){
+            //scan = ModifyDB.checkStatus(lantai);
         }
 
 
@@ -55,6 +58,7 @@ public class LocationServlet extends HttpServlet {
         // store the User object in the request object
         request.setAttribute("lokasi", lokasi);
         request.setAttribute("message", message);
+        //request.setAttribute("scan", scan);
 
         // forward request and response objects to JSP page
         RequestDispatcher dispatcher =
