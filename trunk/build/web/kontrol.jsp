@@ -48,7 +48,7 @@
                 <table>
                     <%
                     for(int i=0;i<20;i++){
-                        out.println("<tr><form>");
+                        out.println("<tr><form action=location>");
                         out.print("<td>nmr_kendaraan</td> ");                        
                         out.print("<td>posisiRencana</td> ");                        
                         out.print("<td>posisiRealisasi</td> ");                        
