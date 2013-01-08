@@ -51,6 +51,11 @@ public class LocationServlet extends HttpServlet {
             url = "/masuk.jsp";
         } else if (action.equals("kontrol")){
             //scan = ModifyDB.checkStatus(lantai);
+            
+        } else if (action.equals("keluar")){
+            ModifyDB.deleteLokasi(nmr_kendaraan);
+            url = "/keluar.jsp";
+            message = "hapus berhasil!";
         }
 
 

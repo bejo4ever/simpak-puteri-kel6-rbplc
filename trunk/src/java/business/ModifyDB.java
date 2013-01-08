@@ -108,4 +108,14 @@ public class ModifyDB extends data.dbConnection {
         }
         return scan;
     }
+    public static void deleteLokasi(String x) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(url, user, password);
+            st = con.createStatement();
+            st.executeUpdate("DELETE FROM `lokasi` WHERE nmr_kendaraan='"+x+"'");
+            st.executeUpdate("DELETE FROM `denda` WHERE nmr_kendaraan='"+x+"'");
+        } catch (Exception e) {
+        }
+    }
 }
