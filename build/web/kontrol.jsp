@@ -49,6 +49,7 @@
             <title>::KONTROL::</title>
         </head>
         <body>
+            <button onclick="location.href='logout.jsp'">Logout</button>
             <sub><p align="right">welcome <%= username%>!</p></sub>
 
             <div id ="header">

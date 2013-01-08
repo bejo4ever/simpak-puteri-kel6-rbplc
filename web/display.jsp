@@ -41,11 +41,6 @@
                                 String user = "root";
                                 String password = "rahasia";
                                 String[][] list = new String[25][25];
-                                /*for (int i = 0; i < 6; i++) {
-                                 for (int j = 0; j < 20; j++) {
-                                 list[i][j]="0";
-                                 }
-                                 }*/
                                 try {
                                     Class.forName("com.mysql.jdbc.Driver");
                                     con = DriverManager.getConnection(url, user, password);

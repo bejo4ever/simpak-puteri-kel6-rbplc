@@ -4,6 +4,10 @@
     Author     : holyknight
 --%>
 
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
 <%@page import="business.Lokasi"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -22,7 +26,7 @@
         }
         Lokasi lokasi = (Lokasi) request.getAttribute("lokasi");
         String message = (String) request.getAttribute("message");
-        //request.setAttribute("action", "masuk");
+        String denda = (String) request.getAttribute("denda");
 
         //null values
         if (lokasi == null) {
@@ -40,7 +44,7 @@
         </script>
         <link rel="stylesheet" type="text/css" href="includes/style.css" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>::MASUK::</title>
+        <title>::KELUAR::</title>
     </head>
     <body>
         <button onclick="location.href='logout.jsp'">Logout</button>
@@ -56,8 +60,54 @@
         </div>
 
         <div id="box_masuk">
-            <h1>Mode: Masuk</h1>
+            <h1>Mode: Keluar</h1>
             <br><br><br><br><br>
+            <table border="0">
+                <tr>
+                    <%
+                        Connection con = null;
+                        Statement st = null;
+                        ResultSet rs = null;
+                        String url = "jdbc:mysql://localhost:3306/parkiran";
+                        String user = "root";
+                        String password = "rahasia";
+                        String[][] list = new String[25][25];
+                        try {
+                            Class.forName("com.mysql.jdbc.Driver");
+                            con = DriverManager.getConnection(url, user, password);
+                            st = con.createStatement();
+                            rs = st.executeQuery("SELECT lantai, posisi, status_lokasi FROM lokasi");
+                            while (rs.next()) {
+                                list[rs.getInt(1)][rs.getInt(2)] = rs.getString(3);
+                                //out.println("lt"+rs.getInt(1)+"pos"+rs.getInt(2)+"stat"+rs.getString(3)+"<br>");
+
+                                //out.println("status"+rs.getInt(1)+"posisi"+rs.getInt(2)+"adalah"+list[rs.getInt(1)][rs.getInt(2)]);
+                            }
+                            out.println("<table border=1 cellpadding=10px>");
+                            for (int i = 1; i <= 6; i++) {
+                                out.println("<tr>");
+                                for (int j = 1; j <= 20; j++) {
+                                    if (list[i][j] != null) {
+                                        if (list[i][j].equals("1")) {
+                                            out.println("<td bgcolor=#aaaa00>");
+                                        } else if (list[i][j].equals("2")) {
+                                            out.println("<td bgcolor=#aa0000>");
+                                        }
+                                    } else {
+                                        out.println("<td bgcolor=#00ff00>");
+                                    }
+                                    out.println(j);
+                                    out.println("</td>");
+                                }
+                                out.print("</tr>");
+                            }
+
+                        } catch (Exception e) {
+                            out.print(e);
+                        }
+                    %>
+            </table>
+
             <form action="location" method="post" name="keluar">
                 <table>
                     <tr>
