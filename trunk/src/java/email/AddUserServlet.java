@@ -48,7 +48,7 @@ public class AddUserServlet extends HttpServlet {
                 || username.length() == 0
                 || pass.length() == 0
                 || admin.length() == 0) {
-            message = "Peliiis fill out all three text boxes.";
+            message = "Mohon isi semua data yang diperlukan";
             url = "/tambah_user.jsp";
         } else {
             message = "";

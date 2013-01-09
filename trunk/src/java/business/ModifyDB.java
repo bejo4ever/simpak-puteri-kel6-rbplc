@@ -80,6 +80,24 @@ public class ModifyDB extends data.dbConnection {
         }
         return y;
     }
+    
+    public static boolean checkAvailable2(Lokasi x) {
+        boolean y = false;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(url, user, password);
+            st = con.createStatement();
+            rs = st.executeQuery("SELECT * FROM lokasi WHERE lantai = '" + x.getLantai()
+                    + "' AND posisi = '" + x.getPosisi()  + "' AND status_lokasi = '1'");
+            if (rs.next()) {
+                y = false;
+            } else {
+                y = true;
+            }
+        } catch (Exception e) {
+        }
+        return y;
+    }
 
     public static void addLokasi(Lokasi x) {
         try {
@@ -88,6 +106,28 @@ public class ModifyDB extends data.dbConnection {
             st = con.createStatement();
             st.executeUpdate("INSERT INTO lokasi VALUES ('" + x.getLantai()
                     + "','" + x.getPosisi() + "','" + x.getNmr_kendaraan() + "','1')");
+        } catch (Exception e) {
+        }
+    }
+
+    public static void addLokasi1(Lokasi x) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(url, user, password);
+            st = con.createStatement();
+            st.executeUpdate("INSERT INTO lokasi VALUES ('" + x.getLantai()
+                    + "','" + x.getPosisi() + "','" + x.getNmr_kendaraan() + "','2')");
+        } catch (Exception e) {
+        }
+    }
+    
+    public static void addLokasi2(Lokasi x) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(url, user, password);
+            st = con.createStatement();
+            st.executeUpdate("INSERT INTO lokasi VALUES ('" + x.getLantai()
+                    + "','" + x.getPosisi() + "','" + x.getNmr_kendaraan() + "','2')");
         } catch (Exception e) {
         }
     }
@@ -108,14 +148,42 @@ public class ModifyDB extends data.dbConnection {
         }
         return scan;
     }
+
     public static void deleteLokasi(String x) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(url, user, password);
             st = con.createStatement();
-            st.executeUpdate("DELETE FROM `lokasi` WHERE nmr_kendaraan='"+x+"'");
-            st.executeUpdate("DELETE FROM `denda` WHERE nmr_kendaraan='"+x+"'");
+            st.executeUpdate("DELETE FROM `lokasi` WHERE nmr_kendaraan='" + x + "'");
+            st.executeUpdate("DELETE FROM `denda` WHERE nmr_kendaraan='" + x + "'");
         } catch (Exception e) {
         }
+    }
+
+        public static void addDenda(Lokasi x) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(url, user, password);
+            st = con.createStatement();
+            st.executeUpdate("INSERT INTO denda VALUES ('" +x.getNmr_kendaraan() + "','2')");
+        } catch (Exception e) {
+        }
+    }
+    
+    public static boolean checkDenda(String x) {
+        boolean y = false;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(url, user, password);
+            st = con.createStatement();
+            rs = st.executeQuery("SELECT * FROM denda WHERE nmr_kendaraan='" + x + "'");
+            if (rs.next()) {
+                y = false;
+            } else {
+                y = true;
+            }
+        } catch (Exception e) {
+        }
+        return y;
     }
 }
