@@ -16,6 +16,7 @@
         <head>
             <link rel="stylesheet" type="text/css" href="includes/style2.css" />
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <div id="box">
             <title>::VIEW USER::</title>
             <script type="text/JavaScript">
                 function timedRefresh(timeoutPeriod) {
@@ -26,7 +27,7 @@
         <body onload="JavaScript:timedRefresh(15000);">
 
             <div id ="boxview">
-                <table border="1" cellpadding="10px">
+                <table border="1" cellpadding="5px">
                         <tr>
                             <td>Nama</td>
                             <td>Alamat</td>
@@ -59,5 +60,6 @@
                             %>
                     </table>
             </div>
+    </div>
         </body>
     </html>
