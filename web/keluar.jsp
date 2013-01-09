@@ -35,6 +35,9 @@
         if (message == null) {
             message = "";
         }
+        if (denda == null) {
+            denda = "";
+        }
     %>
     <head>
         <script>
@@ -108,6 +111,21 @@
                     %>
             </table>
 
+            <form action="location" method="post" name="keluar2">
+                <table>
+                    <tr>
+                        <td>
+                            nomor kendaraan (cek denda):
+                        </td>
+                        <td>
+                            <input type="text" name="nmr_kendaraan">
+                        </td>
+                        <td><input name ="action" type="hidden" value="keluar2"></td>
+                        <td><input type="submit"></td>
+                    </tr>
+                </table>
+            </form>
+
             <form action="location" method="post" name="keluar">
                 <table>
                     <tr>
@@ -116,6 +134,14 @@
                         </td>
                         <td>
                             <input type="text" name="nmr_kendaraan">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            biaya parkir: 
+                        </td>
+                        <td>
+                            <input type="text" name="nmr_kendaraan" value="<% out.print(denda); %>">
                         </td>
                         <td><input name ="action" type="hidden" value="keluar"></td>
                         <td><input type="submit"></td>

@@ -1,4 +1,4 @@
-<%-- 
+a<%-- 
     Document   : kontrol
     Created on : Dec 8, 2012, 11:09:05 PM
     Author     : holyknight
@@ -27,7 +27,7 @@
 
             <div id ="header">
                 <h1>Kondisi Area Parkir</h1> 
-                <font color="black"><table cellpadding="4px"><td bgcolor=#00ff00>Tersedia</td><td bgcolor=#aaaa00>Akan dipakai</td><td bgcolor=#aa0000>Terpakai</td></table></font>
+                <font color="black"><table cellpadding="4px"><td bgcolor=#00ff00>Tersedia</td><td bgcolor=#888800>Akan dipakai</td><td bgcolor=#aa0000>Terpakai</td></table></font>
             </div>
 
             <div id ="box_displaytable">
@@ -58,7 +58,7 @@
                                         for (int j = 1; j <= 20; j++) {
                                             if (list[i][j] != null) {
                                                 if (list[i][j].equals("1")) {
-                                                    out.println("<td bgcolor=#aaaa00>");
+                                                    out.println("<td bgcolor=#888800>");
                                                 } else if (list[i][j].equals("2")) {
                                                     out.println("<td bgcolor=#aa0000>");
                                                 }

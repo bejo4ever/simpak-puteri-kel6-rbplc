@@ -17,6 +17,7 @@ public class LocationServlet extends HttpServlet {
         String posisi = request.getParameter("posisi");
         String nmr_kendaraan = request.getParameter("nmr_kendaraan");
         String action = request.getParameter("action");
+        String denda = "Rp 5000";
         //String ses = request.getParameter("ses");
 
 
@@ -49,17 +50,37 @@ public class LocationServlet extends HttpServlet {
                 }
             }
             url = "/masuk.jsp";
-        } else if (action.equals("kontrol")){
-            //scan = ModifyDB.checkStatus(lantai);
             
-        } else if (action.equals("keluar")){
+        } else if (action.equals("kontrol")) {
+            Boolean cek0 = ModifyDB.checkAvailable(lokasi);
+            Boolean cek1 = ModifyDB.checkAvailable2(lokasi);
+            if(cek0 == true){
+                ModifyDB.addLokasi1(lokasi);
+                ModifyDB.addDenda(lokasi);
+                ModifyDB.deleteLokasi(nmr_kendaraan);
+            }else if(cek1 == false){
+                ModifyDB.addLokasi2(lokasi);
+            }else message = "data ditempati";
+            url = "/kontrol.jsp";
+            
+        } else if (action.equals("keluar")) {
             ModifyDB.deleteLokasi(nmr_kendaraan);
             url = "/keluar.jsp";
             message = "hapus berhasil!";
+
+        } else if (action.equals("keluar2")) {
+            Boolean checkDenda = ModifyDB.checkDenda(nmr_kendaraan);
+            if (checkDenda == false) {
+                message = "data ditemukan";
+                denda = "Rp 10000";
+            } else {
+                message = "bebas denda";
+            }
+            url = "/keluar.jsp";
         }
 
 
-
+        request.setAttribute("denda", denda);
         // store the User object in the request object
         request.setAttribute("lokasi", lokasi);
         request.setAttribute("message", message);

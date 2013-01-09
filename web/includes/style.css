@@ -85,6 +85,14 @@ left: 42%;
 top: 65%;
 }
 
+#boxview
+{
+position: absolute;
+margin-top: 20%;
+margin-left: auto;
+margin-right: auto;
+}
+
 #box_masuk
 {
 position: absolute;
