@@ -16,6 +16,7 @@
 
 %>
 <link rel="stylesheet" type="text/css" href="includes/style2.css" />
+<div id="box">
 <h1>Daftar karyawan</h1>
 <h2>Biodata</h2>
 <p><i><%= message%></i></p>
@@ -60,4 +61,5 @@
         </tr>
     </table>
 </form>
+</div>
 <%@include file="/includes/footer.jsp" %>
