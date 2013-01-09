@@ -38,7 +38,7 @@
                 document.masuk.posisi.value=i;
             }
         </script>
-        <link rel="stylesheet" type="text/css" href="includes/style.css" />
+        <link rel="stylesheet" type="text/css" href="includes/style2.css" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>::MASUK::</title>
     </head>

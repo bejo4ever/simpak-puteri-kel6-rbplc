@@ -39,7 +39,7 @@ a<%--
                                 ResultSet rs = null;
                                 String url = "jdbc:mysql://localhost:3306/parkiran";
                                 String user = "root";
-                                String password = "rahasia";
+                                String password = "";
                                 String[][] list = new String[25][25];
                                 try {
                                     Class.forName("com.mysql.jdbc.Driver");
