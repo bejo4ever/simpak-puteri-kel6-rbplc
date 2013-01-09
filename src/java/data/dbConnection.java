@@ -18,5 +18,5 @@ public class dbConnection {
     public static ResultSet rs = null;
     public static String url = "jdbc:mysql://localhost:3306/parkiran";
     public static String user = "root";
-    public static String password = "rahasia";
+    public static String password = "";
 }

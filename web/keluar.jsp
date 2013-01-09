@@ -45,7 +45,7 @@
                 document.masuk.posisi.value=i;
             }
         </script>
-        <link rel="stylesheet" type="text/css" href="includes/style.css" />
+        <link rel="stylesheet" type="text/css" href="includes/style2.css" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>::KELUAR::</title>
     </head>
@@ -73,7 +73,7 @@
                         ResultSet rs = null;
                         String url = "jdbc:mysql://localhost:3306/parkiran";
                         String user = "root";
-                        String password = "rahasia";
+                        String password = "";
                         String[][] list = new String[25][25];
                         try {
                             Class.forName("com.mysql.jdbc.Driver");
